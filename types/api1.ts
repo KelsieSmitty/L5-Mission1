@@ -44,5 +44,5 @@ const inputData: InputData = {
   year: 2014,
 };
 //It calls the calculateCarValue function with inputData as an argument, and the result is stored in the result variable.
-const result = calculateCarValue(inputData);
-console.log(typeof result);
+const resultCarValue = calculateCarValue(inputData);
+console.log(resultCarValue);

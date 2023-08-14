@@ -37,5 +37,5 @@ const input: InputData = {
     "My only claim was a crash into my house's garage door that left a scratch on my car. There are no other crashes.",
 };
 
-const output: OutputData = convertHistory(input);
-console.log(output);
+const resultRiskRating: OutputData = convertHistory(input);
+console.log(resultRiskRating);
