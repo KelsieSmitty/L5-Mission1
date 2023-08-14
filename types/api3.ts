@@ -1,6 +1,6 @@
 // Import value and rating
-import { resultCarValue } from "./api1.js";
-import { resultRiskRating } from "./api2.js";
+// import resultCarValue from "./api1.js";
+// import resultRiskRating from "./api2.js";
 // Define the interfaces:
 
 interface InputData {
@@ -30,8 +30,8 @@ function convertToQuote(input: InputData): OutputData {
 
 // Example usage
 const input: InputData = {
-  car_value: resultCarValue,
-  risk_rating: resultRiskRating,
+  car_value: 3456,
+  risk_rating: 3,
 };
 
 const output: OutputData = convertToQuote(input);

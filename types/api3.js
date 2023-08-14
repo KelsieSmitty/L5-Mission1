@@ -1,8 +1,7 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 // Import value and rating
-var api1_js_1 = require("./api1.js");
-var api2_js_1 = require("./api2.js");
+// import resultCarValue from "./api1.js";
+// import resultRiskRating from "./api2.js";
+// Define the interfaces:
 function convertToQuote(input) {
     if (input.car_value <= 0 || input.risk_rating < 1 || input.risk_rating > 5) {
         return { error: "Invalid input values" };
@@ -16,8 +15,8 @@ function convertToQuote(input) {
 }
 // Example usage
 var input = {
-    car_value: api1_js_1.resultCarValue,
-    risk_rating: api2_js_1.resultRiskRating,
+    car_value: 3456,
+    risk_rating: 3,
 };
 var output = convertToQuote(input);
 console.log(output);
