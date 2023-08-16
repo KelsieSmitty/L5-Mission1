@@ -45,9 +45,11 @@ function convertHistory(claim_history) {
 /* ---------------------Function 3--------------------------- */
 function convertToQuote(car_value, risk_rating) {
     var result = (car_value * risk_rating) / 100;
+    var monthly_premium = result / 12;
+    var yearly_premium = result;
     return {
-        monthly_premium: Math.round((result / 12) * 100) / 100,
-        yearly_premium: Math.round(result * 100) / 100,
+        monthly_premium: +monthly_premium.toFixed(2),
+        yearly_premium: +yearly_premium.toFixed(2),
     };
 }
 /* ---------------------Function 3--------------------------- */
@@ -84,3 +86,22 @@ app.post("/quote", function (req, res) {
 app.listen(port, function () {
     console.log("Server is listening");
 });
+/* ---------------------TEST DATA--------------------------- */
+// Inside Function 3, call Function 1 and Function 2 to get their results
+function testFunction3() {
+    var model = "Civic";
+    var year = 2014;
+    var claimHistory = "My only claim was a crash into my house's garage door that left a scratch on my car.  There are no other crashes.";
+    var carValueResult = calculateCarValue(model, year);
+    console.log("Function 1 Result:", carValueResult);
+    var riskRatingResult = convertHistory(claimHistory);
+    console.log("Function 2 Result:", riskRatingResult);
+    // Use the results from Function 1 and Function 2
+    var carValue = carValueResult.car_value;
+    var riskRating = riskRatingResult.risk_rating;
+    var quoteResult = convertToQuote(carValue, riskRating);
+    console.log("Function 3 Result:", quoteResult);
+}
+// Call the test function
+testFunction3();
+/* ---------------------TEST DATA--------------------------- */
